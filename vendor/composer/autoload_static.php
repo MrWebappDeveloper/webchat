@@ -9,12 +9,12 @@ class ComposerStaticInit96807a6f4fe1f3f139c0166eb32d00db
     public static $prefixLengthsPsr4 = array (
         'M' => 
         array (
-            'Mrwebappdeveloper\\Webchat\\' => 26,
+            'MrWebappDeveloper\\Webchat\\' => 26,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'Mrwebappdeveloper\\Webchat\\' => 
+        'MrWebappDeveloper\\Webchat\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),

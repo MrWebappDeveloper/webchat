@@ -6,5 +6,5 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Mrwebappdeveloper\\Webchat\\' => array($baseDir . '/src'),
+    'MrWebappDeveloper\\Webchat\\' => array($baseDir . '/src'),
 );

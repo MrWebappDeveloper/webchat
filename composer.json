@@ -17,7 +17,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "MrWebappDeveloper\\Webchat\\Providers\\WebchatProvider"
+                "MrWebappDeveloper\\Webchat\\App\\Providers\\WebchatProvider"
             ]
         }
     },
