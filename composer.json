@@ -1,0 +1,26 @@
+{
+    "name": "mrwebappdeveloper/webchat",
+    "description": "Websocket chat package.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "MrWebappDeveloper\\Webchat\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "anonymous",
+            "email": "anonymous@none.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MrWebappDeveloper\\Webchat\\Providers\\WebchatProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {}
+}
