@@ -23,6 +23,10 @@ class WebchatProvider extends ServiceProvider
      */
     public function boot()
     {
+        $this->loadRoutesFrom(
+            dirname(__DIR__, 2) . '/Routes/web.php'
+        );
+
         $this->loadMigrationsFrom(dirname(__DIR__, 2).'/Database/Migrations');
 
         $this->publishes([

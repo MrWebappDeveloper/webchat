@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Http\UploadedFile;
 use MrWebappDeveloper\Webchat\App\Models\Card;
 use MrWebappDeveloper\Webchat\App\Models\ChatMessage;
-use Modules\Webchat\Http\Facade\MessageFacade;
+use MrWebappDeveloper\Webchat\App\Http\Controllers\Facade\MessageFacade;
 
 class CardMessageFactory extends Factory
 {
