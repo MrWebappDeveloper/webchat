@@ -39,6 +39,7 @@ class WebchatProvider extends ServiceProvider
         $this->publishes([
             dirname(__DIR__, 2) . '/Resources/views' => resource_path('views/vendor/webchat'),
             dirname(__DIR__, 2) . '/Resources/assets' => resource_path('vendor/webchat'),
+            dirname(__DIR__, 2) . '/Public' => public_path('vendor/webchat'),
         ], 'webchat-resources');
 
         $this->publishes([

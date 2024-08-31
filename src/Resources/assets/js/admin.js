@@ -6,7 +6,7 @@ import 'bootstrap/dist/js/bootstrap.bundle'
 import {createApp} from "vue";
 import AdminApp from "../vue/AdminApp.vue";
 
-const AdminWebChatVue = createApp(AdminApp).use(CKEditor);
+const AdminWebChatVue = createApp(AdminApp);
 
 AdminWebChatVue.mount('#chat-app');
 

@@ -5,7 +5,7 @@ namespace MrWebappDeveloper\Webchat\App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Validation\Rule;
-use Modules\Webchat\app\Rules\StoreCardMessageContentRule;
+use MrWebappDeveloper\Webchat\App\Rules\StoreCardMessageContentRule;
 use function PHPUnit\Framework\isNull;
 
 class StoreCardRequest extends FormRequest

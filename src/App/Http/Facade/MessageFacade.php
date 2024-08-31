@@ -126,6 +126,10 @@ class MessageFacade
     {
         $realPath = storage_path('app/public/' . trim(self::baseDirectory(), '/\\ ') . DIRECTORY_SEPARATOR . $path );
 
+        $realPath = str_replace('/', DIRECTORY_SEPARATOR, $realPath);
+
+        $realPath = str_replace('\\', DIRECTORY_SEPARATOR, $realPath);
+
         return file_exists($realPath) ? response()->file($realPath) : null;
     }
 }

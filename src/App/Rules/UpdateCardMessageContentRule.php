@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Webchat\app\Rules;
+namespace MrWebappDeveloper\Webchat\App\Rules;
 
 use Closure;
 use Illuminate\Contracts\Validation\ValidationRule;

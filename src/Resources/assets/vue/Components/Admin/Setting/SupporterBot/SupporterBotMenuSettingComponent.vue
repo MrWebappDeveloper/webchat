@@ -110,7 +110,7 @@ export default {
 <template>
     <div class="padding-5 bg-white">
 
-        <div class="display-flex width-100 height-100 content-start setting-nav simple-navbar">
+        <div class="display-flex width-100 content-start setting-nav simple-navbar">
             <div class="menu">
                 <div class="item display-flex flex-dir-column content-center" @click="openSubSetting('wizardTb')">
                     <span class="setting-link-txt">ویزارد ها</span>

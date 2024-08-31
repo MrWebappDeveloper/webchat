@@ -4,8 +4,8 @@ namespace MrWebappDeveloper\Webchat\App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
-use Modules\Webchat\app\Rules\StoreCardMessageContentRule;
-use Modules\Webchat\app\Rules\UpdateCardMessageContentRule;
+use MrWebappDeveloper\Webchat\App\Rules\StoreCardMessageContentRule;
+use MrWebappDeveloper\Webchat\App\Rules\UpdateCardMessageContentRule;
 
 class UpdateCardRequest extends FormRequest
 {

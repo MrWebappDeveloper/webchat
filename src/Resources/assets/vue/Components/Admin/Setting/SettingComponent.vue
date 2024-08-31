@@ -34,7 +34,7 @@
         <i class="i-simple i-arrow-left i-size-3 margin-top-5 margin-left-5 cursor-pointer" v-if="openedSubSettingComponent" @click="backToMenu"></i>
     </div>
     <div class="padding-5 menu" v-if="!openedSubSettingComponent">
-        <div class="display-flex width-100 height-100 content-center">
+        <div class="display-flex width-100 content-center">
             <div class="setting-link display-flex flex-dir-column content-center cursor-pointer margin-x-2" @click="openSubSetting('bot')" data-route-key="bot">
                 <img src="../../../../imgs/bot.png" alt="" class="setting-link-img">
                 <span class="setting-link-txt">ربات پشتیبان</span>
