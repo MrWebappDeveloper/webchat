@@ -34,7 +34,7 @@ class CardServiceProxy implements ICardService
         $newCard = $this->service->createCardWithMessages($request);
 
         if($newCard)
-            NewCard::dispatch(\view('webchat::partials.card_items')->with('items', [$newCard])->render());
+            NewCard::dispatch(\view('vendor.webchat.partials.card_items')->with('items', [$newCard])->render());
 
         return (bool)$newCard;
     }

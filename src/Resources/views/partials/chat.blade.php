@@ -13,4 +13,4 @@
     var wizardMenuSentEvent = @json($wizardMenuSentEvent);
 </script>
 
-@vite(["Modules/Webchat/Resources/assets/js/chat.js"])
+@vite(["resources/vendor/webchat/js/chat.js"])

@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Session;
 use MrWebappDeveloper\Webchat\App\Models\Chat;
 use MrWebappDeveloper\Webchat\App\Models\ChatOwner;
 use Modules\Webchat\Events\RefreshChatsItem;
-use MrWebappDeveloper\Webchat\App\Http\Controllers\Facade\ChatFacade;
+use MrWebappDeveloper\Webchat\App\Http\Facade\ChatFacade;
 
 class ChatOwnerService implements IChatOnwerService
 {

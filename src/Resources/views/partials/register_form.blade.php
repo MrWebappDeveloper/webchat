@@ -2,4 +2,4 @@
 
 </div>
 
-@vite(["Modules/Webchat/Resources/assets/js/register_form.js"])
+@vite(["resources/vendor/webchat/js/register_form.js"])

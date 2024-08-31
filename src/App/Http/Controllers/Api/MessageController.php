@@ -8,7 +8,7 @@ use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 use MrWebappDeveloper\Webchat\App\Models\Chat;
 use MrWebappDeveloper\Webchat\App\Models\ChatMessage;
-use MrWebappDeveloper\Webchat\App\Http\Controllers\Facade\MessageFacade;
+use MrWebappDeveloper\Webchat\App\Http\Facade\MessageFacade;
 use MrWebappDeveloper\Webchat\App\Http\Requests\FetchChatMessagesRequest;
 use MrWebappDeveloper\Webchat\App\Http\Requests\GetMessageFileRequest;
 use MrWebappDeveloper\Webchat\App\Http\Requests\SeenMessageRequest;

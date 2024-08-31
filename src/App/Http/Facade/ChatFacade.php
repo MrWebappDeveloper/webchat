@@ -1,6 +1,6 @@
 <?php
 
-namespace MrWebappDeveloper\Webchat\App\Http\Controllers\Facade;
+namespace MrWebappDeveloper\Webchat\App\Http\Facade;
 
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Str;

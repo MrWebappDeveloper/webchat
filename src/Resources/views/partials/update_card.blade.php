@@ -6,4 +6,4 @@
     var csrf = "{{ csrf_token() }}"
 </script>
 
-@vite(["Modules/Webchat/Resources/assets/js/update_card.js"])
+@vite(["resources/vendor/webchat/js/update_card.js"])

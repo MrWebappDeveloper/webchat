@@ -4,7 +4,7 @@ namespace Modules\Webchat\database\factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
-use MrWebappDeveloper\Webchat\App\Http\Controllers\Facade\ChatFacade;
+use MrWebappDeveloper\Webchat\App\Http\Facade\ChatFacade;
 
 class ChatOwnerFactory extends Factory
 {

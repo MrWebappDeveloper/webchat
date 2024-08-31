@@ -141,7 +141,7 @@ class CardService implements ICardService
         $cards = Card::paginate($perPage);
 
         if($html)
-            return \view('webchat::partials.card_items')->with('items', $cards)->render();
+            return \view('vendor.webchat.partials.card_items')->with('items', $cards)->render();
 
         return new CardCollection($cards);
     }

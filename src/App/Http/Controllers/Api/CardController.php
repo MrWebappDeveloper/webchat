@@ -36,7 +36,7 @@ class CardController extends Controller
      */
     public function create()
     {
-        return view('webchat::partials.create_card');
+        return view('vendor.webchat.partials.create_card');
     }
 
     /**

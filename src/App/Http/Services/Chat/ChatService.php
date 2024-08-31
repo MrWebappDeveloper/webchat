@@ -75,7 +75,7 @@ class ChatService implements IChatService
     {
         $items = Chat::orderBy('created_at', 'ASC')->has('messages')->paginate($request->input('perpage'));
 
-        return view('webchat::partials.chat_items', compact('items'));
+        return view('vendor.webchat.partials.chat_items', compact('items'));
     }
 
     /**
@@ -131,7 +131,7 @@ class ChatService implements IChatService
      */
     public function registerForm(): View
     {
-        return view('webchat::partials.register_form');
+        return view('vendor.webchat.partials.register_form');
     }
 
     /**

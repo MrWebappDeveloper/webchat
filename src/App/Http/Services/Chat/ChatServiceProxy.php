@@ -39,7 +39,7 @@ class ChatServiceProxy implements IChatService
             if($this->chatOwnerService->updateOwnerSessionId($owner))
                 if($chat = $owner->chat)
                     return
-                        view('webchat::partials.chat', $this->chatViewData($chat, ChatMessage::userRoleName()));
+                        view('vendor.webchat.partials.chat', $this->chatViewData($chat, ChatMessage::userRoleName()));
             else
                 Log::error("Update chat owner session id doesn't successful !");
 
@@ -63,11 +63,11 @@ class ChatServiceProxy implements IChatService
             Log::error("Update chat owner session id doesn't successful !");
 
         if($chat = $owner->chat)
-            return view('webchat::partials.chat', $this->chatViewData($chat, ChatMessage::userRoleName()));
+            return view('vendor.webchat.partials.chat', $this->chatViewData($chat, ChatMessage::userRoleName()));
 
         $newChat =  $this->chatService->createChat($owner);
 
-        return view('webchat::partials.chat', $this->chatViewData($newChat, ChatMessage::userRoleName()));
+        return view('vendor.webchat.partials.chat', $this->chatViewData($newChat, ChatMessage::userRoleName()));
     }
 
     public function all(GetChatListRequest $request): ChatCollection

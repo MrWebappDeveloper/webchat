@@ -9,8 +9,8 @@ use Illuminate\Support\Facades\Log;
 use MrWebappDeveloper\Webchat\App\Models\Card;
 use MrWebappDeveloper\Webchat\App\Models\CardMessage;
 use MrWebappDeveloper\Webchat\App\Models\ChatMessage;
-use MrWebappDeveloper\Webchat\App\Http\Controllers\Facade\CardMessageFacade;
-use MrWebappDeveloper\Webchat\App\Http\Controllers\Facade\MessageFacade;
+use MrWebappDeveloper\Webchat\App\Http\Facade\CardMessageFacade;
+use MrWebappDeveloper\Webchat\App\Http\Facade\MessageFacade;
 
 class CardMessageService implements ICardMessage
 {

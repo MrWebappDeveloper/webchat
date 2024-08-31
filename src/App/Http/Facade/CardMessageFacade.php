@@ -1,6 +1,6 @@
 <?php
 
-namespace MrWebappDeveloper\Webchat\App\Http\Controllers\Facade;
+namespace MrWebappDeveloper\Webchat\App\Http\Facade;
 
 use MrWebappDeveloper\Webchat\App\Models\Card;
 use MrWebappDeveloper\Webchat\App\Models\CardMessage;
