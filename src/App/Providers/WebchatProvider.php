@@ -3,6 +3,7 @@
 namespace MrWebappDeveloper\Webchat\App\Providers;
 
 use Carbon\Laravel\ServiceProvider;
+use MrWebappDeveloper\Webchat\App\Commands\InstallWebchatCommand;
 
 class WebchatProvider extends ServiceProvider
 {
@@ -30,7 +31,18 @@ class WebchatProvider extends ServiceProvider
         $this->loadMigrationsFrom(dirname(__DIR__, 2).'/Database/Migrations');
 
         $this->publishes([
+            dirname(__DIR__, 2) . '/Resources/views' => resource_path('views/vendor/webchat'),
+            dirname(__DIR__, 2) . '/Resources/assets' => resource_path('vendor/webchat'),
+        ], 'webchat-resources');
+
+        $this->publishes([
             dirname(__DIR__, 2) . '/Config/webchat.php' => config_path('webchat.php'),
         ], 'webchat-config');
+
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                InstallWebchatCommand::class,
+            ]);
+        }
     }
 }

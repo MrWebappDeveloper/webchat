@@ -13,6 +13,6 @@
     var deleteChatEvent = "." + @json(\Illuminate\Support\Facades\Config::get('webchat.delete_chat_event'));
     var csrf = "{{ csrf_token() }}"
 </script>
-<script src="{{ Vite::asset('modules/Webchat/Resources/assets/packages/jquery-3.6.3.min.js') }}"></script>
+<script src="{{ Vite::asset('resources/vendor/webchat/packages/jquery-3.6.3.min.js') }}"></script>
 
-@vite(["Modules/Webchat/Resources/assets/js/admin.js"])
+@vite(["resources/vendor/webchat/js/admin.js"])

@@ -2,7 +2,6 @@
 import FileUploaderComponent from "../../../FileUploader.vue";
 import {Request} from "../../../../../../js/Http/Request";
 import {FormError} from "../../../../../../js/Tools/FormError";
-import Editor from 'ckeditor5-custom-build/src/ckeditor';
 
 export default {
     components: {FileUploaderComponent},
