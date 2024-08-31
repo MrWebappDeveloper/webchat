@@ -4,9 +4,9 @@ namespace MrWebappDeveloper\Webchat\App\Http\Services\ChatOwner;
 
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Log;
-use Modules\Webchat\app\Events\ClientStatusChanged;
-use Modules\Webchat\app\Events\OwnerWentOffline;
-use Modules\Webchat\app\Events\OwnerWentOnline;
+use MrWebappDeveloper\Webchat\App\Events\ClientStatusChanged;
+use MrWebappDeveloper\Webchat\App\Events\OwnerWentOffline;
+use MrWebappDeveloper\Webchat\App\Events\OwnerWentOnline;
 use MrWebappDeveloper\Webchat\App\Models\Chat;
 use MrWebappDeveloper\Webchat\App\Models\ChatOwner;
 

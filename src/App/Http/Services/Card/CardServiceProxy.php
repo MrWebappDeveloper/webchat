@@ -3,8 +3,8 @@
 namespace MrWebappDeveloper\Webchat\App\Http\Services\Card;
 
 use Illuminate\Contracts\View\View;
-use Modules\Webchat\app\Events\CardUpdated;
-use Modules\Webchat\app\Events\NewCard;
+use MrWebappDeveloper\Webchat\App\Events\CardUpdated;
+use MrWebappDeveloper\Webchat\App\Events\NewCard;
 use MrWebappDeveloper\Webchat\App\Models\Card;
 use MrWebappDeveloper\Webchat\App\Models\Chat;
 use MrWebappDeveloper\Webchat\App\Http\Requests\StoreCardRequest;

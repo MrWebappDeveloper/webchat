@@ -3,7 +3,13 @@
 namespace MrWebappDeveloper\Webchat\App\Providers;
 
 use Carbon\Laravel\ServiceProvider;
+use MrWebappDeveloper\Webchat\App\Listeners\NotifyNewChatToTelegram;
+use MrWebappDeveloper\Webchat\App\Listeners\NotifyRecentNewMessageToTelegram;
 use MrWebappDeveloper\Webchat\App\Commands\InstallWebchatCommand;
+use MrWebappDeveloper\Webchat\App\Events\NewChat;
+use MrWebappDeveloper\Webchat\App\Events\NewMessage;
+use MrWebappDeveloper\Webchat\App\Events\OwnerWentOnline;
+use MrWebappDeveloper\Webchat\App\Listeners\CheckChatForSendWizardMenu;
 
 class WebchatProvider extends ServiceProvider
 {
@@ -38,6 +44,12 @@ class WebchatProvider extends ServiceProvider
         $this->publishes([
             dirname(__DIR__, 2) . '/Config/webchat.php' => config_path('webchat.php'),
         ], 'webchat-config');
+
+        $this->app['events']->listen(NewChat::class, NotifyNewChatToTelegram::class);
+
+        $this->app['events']->listen(NewMessage::class, NotifyRecentNewMessageToTelegram::class);
+
+        $this->app['events']->listen(OwnerWentOnline::class, CheckChatForSendWizardMenu::class);
 
         if ($this->app->runningInConsole()) {
             $this->commands([

@@ -3,10 +3,10 @@
 namespace MrWebappDeveloper\Webchat\App\Http\Services\Wizard;
 
 use Illuminate\Support\Collection;
-use Modules\Webchat\app\Events\NewMessage;
-use Modules\Webchat\app\Events\SendWizardChildren;
-use Modules\Webchat\app\Events\SendWizardFaqs;
-use Modules\Webchat\app\Events\SendWizardMenuEvent;
+use MrWebappDeveloper\Webchat\App\Events\NewMessage;
+use MrWebappDeveloper\Webchat\App\Events\SendWizardChildren;
+use MrWebappDeveloper\Webchat\App\Events\SendWizardFaqs;
+use MrWebappDeveloper\Webchat\App\Events\SendWizardMenuEvent;
 use MrWebappDeveloper\Webchat\App\Models\Wizard;
 use MrWebappDeveloper\Webchat\App\Http\Requests\FetchWizardsRequest;
 use MrWebappDeveloper\Webchat\App\Http\Requests\StoreWizardRequest;

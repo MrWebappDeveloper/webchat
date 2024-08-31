@@ -4,9 +4,9 @@ namespace MrWebappDeveloper\Webchat\App\Http\Services\ChatMessage;
 
 use Illuminate\Database\Eloquent\Model;
 use JetBrains\PhpStorm\Pure;
-use Modules\Webchat\app\Events\MessagesSeen;
-use Modules\Webchat\app\Events\NewChat;
-use Modules\Webchat\app\Events\NewMessage;
+use MrWebappDeveloper\Webchat\App\Events\MessagesSeen;
+use MrWebappDeveloper\Webchat\App\Events\NewChat;
+use MrWebappDeveloper\Webchat\App\Events\NewMessage;
 use MrWebappDeveloper\Webchat\App\Models\Chat;
 use MrWebappDeveloper\Webchat\App\Models\ChatMessage;
 use MrWebappDeveloper\Webchat\App\Http\Requests\StoreMessageRquest;
