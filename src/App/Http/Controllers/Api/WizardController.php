@@ -6,10 +6,10 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\JsonResponse;
 use Modules\Webchat\app\Http\Requests\SendWizardMenuManually;
 use MrWebappDeveloper\Webchat\App\Models\Wizard;
-use MrWebappDeveloper\Webchat\App\Http\Controllers\Requests\FetchWizardsRequest;
-use MrWebappDeveloper\Webchat\App\Http\Controllers\Requests\SendWizardMenuManuallyRequest;
-use MrWebappDeveloper\Webchat\App\Http\Controllers\Requests\StoreWizardRequest;
-use MrWebappDeveloper\Webchat\App\Http\Controllers\Requests\UpdateWizardRequest;
+use MrWebappDeveloper\Webchat\App\Http\Requests\FetchWizardsRequest;
+use MrWebappDeveloper\Webchat\App\Http\Requests\SendWizardMenuManuallyRequest;
+use MrWebappDeveloper\Webchat\App\Http\Requests\StoreWizardRequest;
+use MrWebappDeveloper\Webchat\App\Http\Requests\UpdateWizardRequest;
 use MrWebappDeveloper\Webchat\App\Http\Services\Wizard\WizardServiceProxy;
 
 class WizardController extends Controller

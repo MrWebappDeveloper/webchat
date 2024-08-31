@@ -12,7 +12,7 @@ use JetBrains\PhpStorm\ArrayShape;
 use MrWebappDeveloper\Webchat\App\Models\Chat;
 use MrWebappDeveloper\Webchat\App\Models\ChatMessage;
 use MrWebappDeveloper\Webchat\App\Models\ChatOwner;
-use MrWebappDeveloper\Webchat\App\Http\Controllers\Requests\GetChatListRequest;
+use MrWebappDeveloper\Webchat\App\Http\Requests\GetChatListRequest;
 use MrWebappDeveloper\Webchat\App\Http\Transformers\ChatCollection;
 use MrWebappDeveloper\Webchat\App\Http\Transformers\ChatMessageCollection;
 use Nwidart\Modules\Collection;

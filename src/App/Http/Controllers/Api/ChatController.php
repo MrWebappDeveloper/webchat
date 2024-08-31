@@ -8,11 +8,11 @@ use Illuminate\Http\JsonResponse;
 use MrWebappDeveloper\Webchat\App\Models\Chat;
 use MrWebappDeveloper\Webchat\App\Models\ChatMessage;
 use MrWebappDeveloper\Webchat\App\Http\Controllers\Controller;
-use MrWebappDeveloper\Webchat\App\Http\Controllers\Requests\ConnectToOpeartorRequest;
-use MrWebappDeveloper\Webchat\App\Http\Controllers\Requests\GetChatListRequest;
-use MrWebappDeveloper\Webchat\App\Http\Controllers\Requests\OfflineNotifyRequest;
-use MrWebappDeveloper\Webchat\App\Http\Controllers\Requests\OnlineNotifyRequest;
-use MrWebappDeveloper\Webchat\App\Http\Controllers\Requests\StoreNewChatRequest;
+use MrWebappDeveloper\Webchat\App\Http\Requests\ConnectToOpeartorRequest;
+use MrWebappDeveloper\Webchat\App\Http\Requests\GetChatListRequest;
+use MrWebappDeveloper\Webchat\App\Http\Requests\OfflineNotifyRequest;
+use MrWebappDeveloper\Webchat\App\Http\Requests\OnlineNotifyRequest;
+use MrWebappDeveloper\Webchat\App\Http\Requests\StoreNewChatRequest;
 use MrWebappDeveloper\Webchat\App\Http\Services\Chat\ChatServiceProxy;
 use MrWebappDeveloper\Webchat\App\Http\Services\ChatOwner\ChatOwnerServiceProxy;
 use MrWebappDeveloper\Webchat\App\Http\Transformers\ChatItemResource;
@@ -33,8 +33,6 @@ class ChatController extends Controller
      */
     public function index(GetChatListRequest $request): JsonResponse|View
     {
-        $this->authorize('adminOperation', Chat::class);
-
         if(!$request->input('format') || $request->input('format') == 'json')
             return response()->json([
                 'status' => 'ok',
@@ -77,8 +75,6 @@ class ChatController extends Controller
      */
     public function show(Chat $chat): JsonResponse
     {
-        $this->authorize('adminOperation', Chat::class);
-
         return $this->chatService->show($chat);
     }
 
@@ -91,8 +87,6 @@ class ChatController extends Controller
      */
     public function destroy(Chat $chat)
     {
-        $this->authorize('adminOperation', Chat::class);
-
         return
             $this->chatService->remove($chat) ?
                 \response()->json([

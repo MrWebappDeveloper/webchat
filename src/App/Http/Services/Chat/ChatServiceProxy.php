@@ -10,7 +10,7 @@ use Modules\Webchat\app\Events\NewChat;
 use MrWebappDeveloper\Webchat\App\Models\Chat;
 use MrWebappDeveloper\Webchat\App\Models\ChatMessage;
 use MrWebappDeveloper\Webchat\App\Models\ChatOwner;
-use MrWebappDeveloper\Webchat\App\Http\Controllers\Requests\GetChatListRequest;
+use MrWebappDeveloper\Webchat\App\Http\Requests\GetChatListRequest;
 use MrWebappDeveloper\Webchat\App\Http\Services\ChatMessage\ChatMessageServiceProxy;
 use MrWebappDeveloper\Webchat\App\Http\Services\ChatOwner\ChatOwnerServiceProxy;
 use MrWebappDeveloper\Webchat\App\Http\Transformers\ChatCollection;

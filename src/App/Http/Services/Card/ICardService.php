@@ -5,8 +5,8 @@ namespace MrWebappDeveloper\Webchat\App\Http\Services\Card;
 use Illuminate\Contracts\View\View;
 use MrWebappDeveloper\Webchat\App\Models\Card;
 use MrWebappDeveloper\Webchat\App\Models\Chat;
-use MrWebappDeveloper\Webchat\App\Http\Controllers\Requests\StoreCardRequest;
-use MrWebappDeveloper\Webchat\App\Http\Controllers\Requests\UpdateCardRequest;
+use MrWebappDeveloper\Webchat\App\Http\Requests\StoreCardRequest;
+use MrWebappDeveloper\Webchat\App\Http\Requests\UpdateCardRequest;
 use MrWebappDeveloper\Webchat\App\Http\Transformers\CardCollection;
 
 interface ICardService

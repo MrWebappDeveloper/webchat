@@ -1,6 +1,6 @@
 <?php
 
-namespace MrWebappDeveloper\Webchat\App\Http\Controllers\Requests;
+namespace MrWebappDeveloper\Webchat\App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;

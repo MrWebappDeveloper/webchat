@@ -4,9 +4,9 @@ namespace MrWebappDeveloper\Webchat\App\Http\Services\Wizard;
 
 use Illuminate\Support\Collection;
 use MrWebappDeveloper\Webchat\App\Models\Wizard;
-use MrWebappDeveloper\Webchat\App\Http\Controllers\Requests\FetchWizardsRequest;
-use MrWebappDeveloper\Webchat\App\Http\Controllers\Requests\StoreWizardRequest;
-use MrWebappDeveloper\Webchat\App\Http\Controllers\Requests\UpdateWizardRequest;
+use MrWebappDeveloper\Webchat\App\Http\Requests\FetchWizardsRequest;
+use MrWebappDeveloper\Webchat\App\Http\Requests\StoreWizardRequest;
+use MrWebappDeveloper\Webchat\App\Http\Requests\UpdateWizardRequest;
 
 interface IWizardService
 {

@@ -7,9 +7,9 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use MrWebappDeveloper\Webchat\App\Models\ChatMessage;
 use MrWebappDeveloper\Webchat\App\Models\Wizard;
-use MrWebappDeveloper\Webchat\App\Http\Controllers\Requests\FetchWizardsRequest;
-use MrWebappDeveloper\Webchat\App\Http\Controllers\Requests\StoreWizardRequest;
-use MrWebappDeveloper\Webchat\App\Http\Controllers\Requests\UpdateWizardRequest;
+use MrWebappDeveloper\Webchat\App\Http\Requests\FetchWizardsRequest;
+use MrWebappDeveloper\Webchat\App\Http\Requests\StoreWizardRequest;
+use MrWebappDeveloper\Webchat\App\Http\Requests\UpdateWizardRequest;
 use MrWebappDeveloper\Webchat\App\Http\Services\ChatOwner\ChatOwnerServiceProxy;
 use MrWebappDeveloper\Webchat\App\Http\Services\ChatOwner\IChatOnwerService;
 

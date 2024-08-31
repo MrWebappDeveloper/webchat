@@ -3,9 +3,9 @@
 namespace MrWebappDeveloper\Webchat\App\Http\Services\FAQ;
 
 use MrWebappDeveloper\Webchat\App\Models\FAQ;
-use MrWebappDeveloper\Webchat\App\Http\Controllers\Requests\FetchFAQRequest;
-use MrWebappDeveloper\Webchat\App\Http\Controllers\Requests\StoreFAQRequest;
-use MrWebappDeveloper\Webchat\App\Http\Controllers\Requests\UpdateFAQRequest;
+use MrWebappDeveloper\Webchat\App\Http\Requests\FetchFAQRequest;
+use MrWebappDeveloper\Webchat\App\Http\Requests\StoreFAQRequest;
+use MrWebappDeveloper\Webchat\App\Http\Requests\UpdateFAQRequest;
 use MrWebappDeveloper\Webchat\App\Http\Transformers\FAQResource;
 
 class FAQService implements IFAQService

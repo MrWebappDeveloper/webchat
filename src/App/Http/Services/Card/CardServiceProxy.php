@@ -7,8 +7,8 @@ use Modules\Webchat\app\Events\CardUpdated;
 use Modules\Webchat\app\Events\NewCard;
 use MrWebappDeveloper\Webchat\App\Models\Card;
 use MrWebappDeveloper\Webchat\App\Models\Chat;
-use MrWebappDeveloper\Webchat\App\Http\Controllers\Requests\StoreCardRequest;
-use MrWebappDeveloper\Webchat\App\Http\Controllers\Requests\UpdateCardRequest;
+use MrWebappDeveloper\Webchat\App\Http\Requests\StoreCardRequest;
+use MrWebappDeveloper\Webchat\App\Http\Requests\UpdateCardRequest;
 use MrWebappDeveloper\Webchat\App\Http\Transformers\CardCollection;
 
 class CardServiceProxy implements ICardService

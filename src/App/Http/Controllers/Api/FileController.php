@@ -5,7 +5,7 @@ namespace MrWebappDeveloper\Webchat\App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\JsonResponse;
 use MrWebappDeveloper\Webchat\App\Http\Controllers\Facade\MessageFacade;
-use MrWebappDeveloper\Webchat\App\Http\Controllers\Requests\StoreFileRequest;
+use MrWebappDeveloper\Webchat\App\Http\Requests\StoreFileRequest;
 
 class FileController extends Controller
 {

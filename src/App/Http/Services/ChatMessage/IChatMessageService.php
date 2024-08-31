@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Log;
 use MrWebappDeveloper\Webchat\App\Models\Chat;
 use MrWebappDeveloper\Webchat\App\Models\ChatMessage;
-use MrWebappDeveloper\Webchat\App\Http\Controllers\Requests\StoreMessageRquest;
-use MrWebappDeveloper\Webchat\App\Http\Controllers\Requests\UpdateMessageRequest;
+use MrWebappDeveloper\Webchat\App\Http\Requests\StoreMessageRquest;
+use MrWebappDeveloper\Webchat\App\Http\Requests\UpdateMessageRequest;
 use SebastianBergmann\Diff\Exception;
 
 interface IChatMessageService
