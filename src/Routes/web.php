@@ -11,10 +11,12 @@
 |
 */
 
-use BeyondCode\LaravelWebSockets\WebSockets\WebSocketHandler;
-use Illuminate\Support\Facades\Route;
+ use App\Models\User;
+ use Illuminate\Support\Facades\Broadcast;
+ use Illuminate\Support\Facades\Route;
+ use MrWebappDeveloper\Webchat\WebSockets\WebSocketHandler;
 
-Route::middleware(['web'])->group(function(){
+ Route::middleware(['web'])->group(function(){
     /**
      * WizardController API
      */
@@ -73,3 +75,14 @@ Route::middleware(['web'])->group(function(){
     });
 
 });
+
+Route::middleware(['api'])->group(function (){
+    Route::controller(\MrWebappDeveloper\Webchat\App\Http\Controllers\Api\ChatController::class)->prefix('/chat')->group(function(){
+        Route::post('/offline-notify', 'offlineNotify')->name('owner.offline.notify');
+    });
+
+});
+
+ Broadcast::channel('admin', function (User $user) {
+     return true;
+ });
