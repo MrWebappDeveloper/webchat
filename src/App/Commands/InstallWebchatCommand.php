@@ -95,7 +95,8 @@ class InstallWebchatCommand extends Command
         ]);
 
         $packageJson['dependencies'] = array_merge($packageJson['dependencies'] ?? [], [
-            "vue" => "^3.3.6"
+            "vue" => "^3.3.6",
+            "quill" => "^2.0.2",
         ]);
 
         file_put_contents(base_path('package.json'), json_encode($packageJson, JSON_PRETTY_PRINT));

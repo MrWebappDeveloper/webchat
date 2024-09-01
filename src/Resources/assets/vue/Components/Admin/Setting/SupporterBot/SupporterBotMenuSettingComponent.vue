@@ -124,7 +124,7 @@ export default {
             </div>
         </div>
     </div>
-    <div class="body">
+    <div class="body" style="overflow-y: auto">
         <component :is="openedSubSettingComponent" :data="componentData"
                    @ShowWizardFaqs="openWizardFAQsTb"
                    @ShowFAQWizards="openFaqWizardsTb"
