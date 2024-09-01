@@ -2,6 +2,7 @@
 import FileUploaderComponent from "../../../FileUploader.vue";
 import {Request} from "../../../../../../js/Http/Request";
 import {FormError} from "../../../../../../js/Tools/FormError";
+import Quill from "quill";
 
 export default {
     components: {FileUploaderComponent},
@@ -18,13 +19,9 @@ export default {
         return{
             showUploader: false,
             id:null,
-            ck:{
-                editor: Editor,
-                editorData: '',
-                editorConfig: {
-                    // The configuration of the editor.
-                }
-            },
+
+            text: null,
+            quill: null,
 
             requestProcessing:false,
 
@@ -52,10 +49,85 @@ export default {
 
                 })
                 .use(this)
-                .asyncSend();
+                .send();
         },
         setEditorData(data){
-          this.ck.editorData = data;
+            this.text = data;
+
+            let app = this;
+
+            setTimeout(function(){
+                const fullToolbar = [
+                    [
+                        {
+                            font: []
+                        },
+                        {
+                            size: []
+                        }
+                    ],
+                    ['bold', 'italic', 'underline', 'strike'],
+                    [
+                        {
+                            color: []
+                        },
+                        {
+                            background: []
+                        }
+                    ],
+                    [
+                        {
+                            script: 'super'
+                        },
+                        {
+                            script: 'sub'
+                        }
+                    ],
+                    [
+                        {
+                            header: '1'
+                        },
+                        {
+                            header: '2'
+                        },
+                        'blockquote',
+                        'code-block'
+                    ],
+                    [
+                        {
+                            list: 'ordered'
+                        },
+                        {
+                            list: 'bullet'
+                        },
+                        {
+                            indent: '-1'
+                        },
+                        {
+                            indent: '+1'
+                        }
+                    ],
+                    [
+                        'direction',
+                        {
+                            align: []
+                        }
+                    ],
+                    ['link', 'image', 'video', 'formula'],
+                    ['clean']
+                ];
+
+                app.quill =
+                    new Quill('#snow-editor', {
+                        bounds: '#snow-editor',
+                        modules: {
+                            toolbar: fullToolbar
+                        },
+                        theme: 'snow'
+                    });
+            }, 1000)
+
+
         },
         openUploader(){
             this.showUploader = true;
@@ -78,7 +150,7 @@ export default {
                     .data({
                         _token: csrf,
                         question: app.question,
-                        answer: app.ck.editorData
+                        answer: app.quill.getSemanticHTML()
                     })
                     .success(function (response, instance) {
                         instance.wasSuccessful(response)
@@ -116,6 +188,13 @@ export default {
     <div class="padding-x-5 ">
         <h5>ویرایش پاسخ</h5>
         <form action="" @submit="onSubmit" v-if="!showSuccessResponse">
+            <div class="frm-group colu-12 display-flex content-end">
+                <button :type="requestProcessing ? 'button' : 'submit'" class="button button-primary">
+                    <span v-show="!requestProcessing">ویرایش</span>
+                    <img src="../../../../../../imgs/loading.gif" alt="" width="15px" v-show="requestProcessing">
+                </button>
+                <button class="button button-warning margin-right-1" type="button" @click="onCancel">انصراف</button>
+            </div>
             <div class="frm-group colu-12">
                 <label for="" class="text-color-dark">سوال | عنوان :</label>
                 <input type="text" class="frm-control" name="question" placeholder="عنوان یا سوال پاسخ جدید را وارد کنید ..." v-model="question">
@@ -124,19 +203,11 @@ export default {
             <div class="frm-group colu-12">
                 <div class="display-flex content-between align-center margin-bottom-2">
                     <label for="" class="text-color-dark">متن پاسخ :</label>
-                    <button class="button button-primary button-sm" type="button" @click="openUploader">آپلود فایل
-                    </button>
                     <FileUploaderComponent v-if="showUploader" @close="closeUploader" @cancel="closeUploader" @confirm="closeUploader"></FileUploaderComponent>
                 </div>
-                <ckeditor :editor="ck.editor" v-model="ck.editorData" :config="ck.editorConfig"></ckeditor>
+                <div id="snow-editor" class="border border-secondary" v-html="text">
+                </div>
                 <span class="invalid-message"></span>
-            </div>
-            <div class="frm-group colu-12 display-flex content-end">
-                <button :type="requestProcessing ? 'button' : 'submit'" class="button button-primary">
-                    <span v-show="!requestProcessing">ویرایش</span>
-                    <img src="../../../../../../imgs/loading.gif" alt="" width="15px" v-show="requestProcessing">
-                </button>
-                <button class="button button-warning margin-right-1" type="button" @click="onCancel">انصراف</button>
             </div>
         </form>
         <div class="success-response width-100 display-flex content-center" v-if="showSuccessResponse">

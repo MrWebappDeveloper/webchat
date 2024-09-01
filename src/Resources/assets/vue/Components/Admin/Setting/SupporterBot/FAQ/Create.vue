@@ -18,14 +18,6 @@ export default {
 
             quill:null,
 
-            // ck:{
-            //     editor: Editor,
-            //     editorData: '',
-            //     editorConfig: {
-            //         // The configuration of the editor.
-            //     }
-            // },
-
             showSuccessResponse: false,
         }
     },
@@ -89,16 +81,6 @@ export default {
             ['link', 'image', 'video', 'formula'],
             ['clean']
         ];
-
-        // const fullEditor = new Quill('#full-editor', {
-        //     bounds: '#full-editor',
-        //     placeholder: 'Type Something...',
-        //     modules: {
-        //         formula: true,
-        //         toolbar: fullToolbar
-        //     },
-        //     theme: 'snow'
-        // });
 
         this.quill =
             new Quill('#snow-editor', {
@@ -184,12 +166,9 @@ export default {
             <div class="frm-group colu-12">
                 <div class="display-flex content-between align-center margin-bottom-2">
                     <label for="" class="text-color-dark">متن پاسخ :</label>
-                    <button class="button button-primary button-sm" type="button" @click="openUploader">آپلود فایل
-                    </button>
                     <FileUploaderComponent v-if="showUploader" @close="closeUploader" @cancel="closeUploader"
                                            @confirm="closeUploader"></FileUploaderComponent>
                 </div>
-                <!--                <ckeditor :editor="ck.editor" v-model="ck.editorData" :config="ck.editorConfig"></ckeditor>-->
                 <div id="snow-editor" class="border border-secondary">
                 </div>
                 <span class="invalid-message"></span>
