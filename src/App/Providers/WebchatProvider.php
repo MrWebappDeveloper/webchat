@@ -3,6 +3,8 @@
 namespace MrWebappDeveloper\Webchat\App\Providers;
 
 use Carbon\Laravel\ServiceProvider;
+use Illuminate\Console\Scheduling\Schedule;
+use MrWebappDeveloper\Webchat\App\Commands\ClientConnectionToOperatorDisconnector;
 use MrWebappDeveloper\Webchat\App\Listeners\NotifyNewChatToTelegram;
 use MrWebappDeveloper\Webchat\App\Listeners\NotifyRecentNewMessageToTelegram;
 use MrWebappDeveloper\Webchat\App\Commands\InstallWebchatCommand;
@@ -55,7 +57,16 @@ class WebchatProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             $this->commands([
                 InstallWebchatCommand::class,
+                ClientConnectionToOperatorDisconnector::class
             ]);
+
+            $this->app->booted(function(){
+                $schedule = $this->app->make(Schedule::class);
+
+                $schedule->command('operatorOldChatConnections:disconnect')->hourly();
+            });
         }
+
+
     }
 }
