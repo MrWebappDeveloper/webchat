@@ -3,7 +3,7 @@
 namespace MrWebappDeveloper\Webchat\App\Http\Services\Notifications\Telegram;
 
 use Illuminate\Support\Facades\Config;
-use Modules\Webchat\Helpers\TelegramApi\Telegram;
+use MrWebappDeveloper\Webchat\App\Helpers\TelegramApi\Telegram;
 use MrWebappDeveloper\Webchat\App\Http\Services\Notifications\INotification;
 
 class TelegramNotify implements INotification

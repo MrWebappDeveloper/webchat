@@ -24,7 +24,7 @@ export default {
 </script>
 
 <template>
-    <div class="chat-item display-flex content-between flex-reverse padding-2 bordering-bottom">
+    <div class="chat-item display-flex content-between flex-reverse padding-2 bordering-bottom" style="position: relative !important;">
         <div class="glass open-chat-btn" @click="open"></div>
         <div class="display-flex flex-dir-column text-align-right padding-right-5 pos-relative">
             <i :class="chatInfo.owner_online ? 'i-radio-btn-success' : 'i-radio-btn-secondary'" class="i-simple pos-absolute" style="right: 0; top: 12px;"></i>

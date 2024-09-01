@@ -521,7 +521,7 @@ export default {
 
 <template>
     <div class="pos-relative height-100">
-        <div class="messages-container fm-shabnam chat-background" style="padding-bottom: 50px" id="chat-body"
+        <div class="messages-container fm-shabnam chat-background" style="padding-bottom: 50px; height: 92% !important;" id="chat-body"
              ref="messages">
             <div class="width-100 display-flex justify-content-center" v-if="!isConnectedToOperator && chatMessages.length === 0">
                 <img src="../../imgs/loading.gif" width="25px" class="margin-x-auto">

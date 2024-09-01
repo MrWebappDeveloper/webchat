@@ -1,5 +1,5 @@
 @foreach($items as $item)
-    <div class="chat-item display-flex content-between flex-reverse padding-2 bordering-bottom">
+    <div class="chat-item display-flex content-between flex-reverse padding-2 bordering-bottom" style="position: relative">
         <div class="glass open-chat-btn" data-chat-id="{{ $item->id }}"></div>
         <div class="display-flex flex-dir-column text-align-right padding-right-5 pos-relative">
             <i class="@if($item->owner->isOnline) fa-solid text-color-success @else fa-regular @endif fa-circle pos-absolute" style="right: 0; top: 12px;"></i>
