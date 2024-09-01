@@ -60,6 +60,11 @@
      */
     Route::post('/webchat/file', [\MrWebappDeveloper\Webchat\App\Http\Controllers\Api\FileController::class, 'store'])->name('webchat.upload.file');
 
+     /**
+      * Webchat panel
+      */
+     Route::view('/webchat-panel', 'vendor.webchat.admin');
+
     /**
      * Set custom socket handler endpoint
      */

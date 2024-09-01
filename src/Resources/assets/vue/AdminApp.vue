@@ -1,8 +1,7 @@
 <template>
     <i class="i-simple i-messages i-size-4 chat-btn cursor-pointer display-none" ref="chat-toggle" @click="show()"
        v-show="!boxVisibility"></i>
-    <div class="webchat display-flex height-100 content-center fm-shabnam padding-0 direction-ltr " id="web-chat"
-         v-if="boxVisibility">
+    <div class="webchat display-flex height-100 content-center fm-shabnam padding-0 direction-ltr " id="web-chat">
         <div class="colu-2 height-100 chat-list bordering-right overflow-y-auto" @scroll="chatItemsListScrollEvent">
             <!-- BEIGN chat list section header  -->
             <div class="chat-list-header back-red display-flex content-between flex-reverse padding-3">
@@ -11,8 +10,6 @@
                     <i class="i-simple i-messages i-size-4 fa-2x text-color-light"></i>
                 </div>
                 <div class="display-flex align-center">
-                    <i class="i-simple i-size-3 padding-top-2 i-x-mark text-color-light padding-right-3 cursor-pointer"
-                       @click="hide"></i>
                     <i class="i-simple i-size-3 padding-top-2 i-gear text-color-light padding-right-3 cursor-pointer"
                        @click="openSetting"></i>
                 </div>
