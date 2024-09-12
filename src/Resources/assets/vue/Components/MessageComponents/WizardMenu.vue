@@ -72,9 +72,9 @@ export default {
             <button class="button text-sm margin-y-1 width-100" @click="goBack">بازگشت به منوی قبل</button>
         </li>
     </ul>
-    <button class="button button-sm button-danger width-100">
-        <span class="text-sm" @click="connectToOperator" v-if="!isConnectedToOperator">ارتباط با کارشناس</span>
-        <span class="text-sm" @click="connectToOperator" v-if="isConnectedToOperator">خروج</span>
+    <button class="button button-sm button-danger width-100" @click="connectToOperator">
+        <span class="text-sm" v-if="!isConnectedToOperator">ارتباط با کارشناس</span>
+        <span class="text-sm" v-if="isConnectedToOperator">خروج</span>
     </button>
 </template>
 
