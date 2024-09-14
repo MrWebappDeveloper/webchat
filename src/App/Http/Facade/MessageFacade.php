@@ -5,6 +5,7 @@ namespace MrWebappDeveloper\Webchat\App\Http\Facade;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Str;
 use JetBrains\PhpStorm\ArrayShape;
@@ -22,9 +23,13 @@ class MessageFacade
      */
     public static function saveFile(UploadedFile $file): string
     {
-        $storePath = $file->store(self::storeFileLocation());
+        $storePath = str_replace('/', DIRECTORY_SEPARATOR, $file->store(self::storeFileLocation()));
 
-        return trim(URL::route('chat.message.file', [] , false) . "?path=" . trim(substr($storePath, (strpos($storePath, self::baseDirectory()) + strlen(self::baseDirectory())), strlen($storePath)) , '/\\ '), '/\\ ');
+        $storePath = ltrim($storePath, DIRECTORY_SEPARATOR);
+
+        $storePath = ltrim($storePath, 'public');
+
+        return ltrim(Storage::url(ltrim($storePath, DIRECTORY_SEPARATOR . ' /')), DIRECTORY_SEPARATOR . ' /');
     }
 
     /**
