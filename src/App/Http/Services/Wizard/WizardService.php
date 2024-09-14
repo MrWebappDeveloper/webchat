@@ -63,7 +63,7 @@ class WizardService implements IWizardService
         DB::beginTransaction();
 
         if ($res = $wizard->update($request->only('keyword', 'parent_id'))){
-            if ($request->input('faqs') && !$wizard->faqs()->sync($request->input('faqs')))
+            if (!$wizard->faqs()->sync($request->input('faqs') ?? []))
                 return false;
         }
 
