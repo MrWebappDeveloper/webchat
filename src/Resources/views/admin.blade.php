@@ -20,6 +20,7 @@
     var ownerWentOfflineEvent = "." + @json(\Illuminate\Support\Facades\Config::get('webchat.chat_owner_went_offline_event'));
     var newChatEvent = "." + @json(\Illuminate\Support\Facades\Config::get('webchat.new_chat_event'));
     var newCardEvent = "." + @json(\Illuminate\Support\Facades\Config::get('webchat.new_card_event'));
+    var newMessageEvent = "." + @json(\Illuminate\Support\Facades\Config::get('webchat.new_message_event'));
     var clientStatusChangedEvent = "." + @json(\Illuminate\Support\Facades\Config::get('webchat.client_status_changed_event'));
     var deleteChatEvent = "." + @json(\Illuminate\Support\Facades\Config::get('webchat.delete_chat_event'));
     var csrf = "{{ csrf_token() }}"

@@ -2,7 +2,7 @@
     <i class="i-simple i-messages i-size-4 chat-btn cursor-pointer display-none" ref="chat-toggle" @click="show()"
        v-show="!boxVisibility"></i>
     <div class="webchat display-flex height-100 content-center fm-shabnam padding-0 direction-ltr " id="web-chat">
-        <div class="colu-2 height-100 chat-list bordering-right overflow-y-auto" @scroll="chatItemsListScrollEvent">
+        <div class="colu-2 height-100 chat-list bordering-right" style="overflow: auto" @scroll="chatItemsListScrollEvent">
             <!-- BEIGN chat list section header  -->
             <div class="chat-list-header back-red display-flex content-between flex-reverse padding-3">
                 <div class="display-flex align-center">
