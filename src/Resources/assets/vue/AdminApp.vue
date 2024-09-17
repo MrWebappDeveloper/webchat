@@ -214,19 +214,33 @@ export default {
                 })
         },
 
+        /**
+         * Listen to new message broadcast for update chat items new messages count and last message text
+         */
+        listenToNewMessages(){
+            this.chats.forEach(function (item, index) {
+                console.log(item)
+                window.Echo.channel(item.channel)
+                    .listen(newMessageEvent, (e) => {
+                        item.unseen_messages_count += 1;
+                        item.last_message_status = 'sent'
+                        item.last_message = e.message.content.type === 'text' ? e.message.content.text : '';
+                    })
+            })
+        },
+
         openSetting() {
             this.setComponentData('setting', []);
         },
 
         /**
          * Empty loaded chat list then reload that
-         */
-        reloadChatList() {
+         */ async reloadChatList() {
             this.chatListPage = 1;
 
             this.chatItemsHtml = '';
 
-            this.fetchChatList();
+            await this.fetchChatList();
         },
 
         /**
@@ -311,6 +325,8 @@ export default {
                     instance.allChatListPagesLoaded = true;
                 instance.chats = instance.chats.concat(responseJson.chats);
                 instance.chatListPage++;
+
+                instance.listenToNewMessages()
             }).error(function () {
                 console.error('There are error in load chat list items !')
             }).use(this).asyncSend();
